@@ -19,7 +19,8 @@ const Photo = () => {
       <img src={image} className="App-logo" alt="logo" />{" "}
       <Helmet>
         <title>{name}</title>
-        <meta property="og:title" content="MyApp" />
+        <meta property="og:title" content="{name}" />
+        <meta property="og:url" content={name} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={`./${name}.jpg`} />
         <meta property="og:description" content={`./${name}.jpg`} />
