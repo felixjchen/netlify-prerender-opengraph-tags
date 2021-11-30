@@ -4,6 +4,7 @@ import pinapple from "./pinapple.jpg";
 import blanket from "./blanket.jpg";
 import "./App.css";
 import { useParams } from "react-router";
+import { Helmet } from "react-helmet";
 
 import { BrowserRouter, Link, Outlet, Routes, Route } from "react-router-dom";
 
@@ -16,6 +17,12 @@ const Photo = () => {
   return (
     <>
       <img src={image} className="App-logo" alt="logo" />{" "}
+      <Helmet>
+        <title>{name}</title>
+        <meta property="og:title" content="MyApp" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={`./${name}.jpg`} />
+      </Helmet>
     </>
   );
 };
