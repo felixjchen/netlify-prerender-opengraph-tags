@@ -22,6 +22,7 @@ const Photo = () => {
         <meta property="og:title" content="MyApp" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={`./${name}.jpg`} />
+        <meta property="og:description" content={`./${name}.jpg`} />
       </Helmet>
     </>
   );
