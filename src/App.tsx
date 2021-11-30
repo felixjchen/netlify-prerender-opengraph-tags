@@ -13,16 +13,21 @@ const Photo = () => {
   if (name === undefined) return <> </>;
 
   const image = { pinapple, blanket }[name];
+  const url = {
+    pinapple:
+      "https://i5.walmartimages.ca/images/Enlarge/198/506/6000200198506.jpg",
+    blanket: "https://m.media-amazon.com/images/I/71THWcYwDML._AC_SX466_.jpg",
+  }[name];
 
   return (
     <>
       <img src={image} className="App-logo" alt="logo" />{" "}
       <Helmet>
         <title>{name}</title>
-        <meta property="og:title" content="{name}" />
-        <meta property="og:url" content={name} />
+        <meta property="og:title" content={name} />
+        <meta property="og:image" content={url} />
+        <meta property="og:url" content={url + name} />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content={`./${name}.jpg`} />
         <meta property="og:description" content={`./${name}.jpg`} />
       </Helmet>
     </>
