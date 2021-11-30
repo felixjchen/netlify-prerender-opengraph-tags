@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import logo from "./logo.svg";
 import pinapple from "./pinapple.jpg";
 import blanket from "./blanket.jpg";
 import "./App.css";
-import { useParams } from "react-router";
+import { useLocation, useParams } from "react-router";
 import { Helmet } from "react-helmet";
 
 import { BrowserRouter, Link, Outlet, Routes, Route } from "react-router-dom";
 
 const Photo = () => {
+  const location = useLocation();
+  useEffect(() => {}, [location.key]);
+
   const { name } = useParams();
   if (name === undefined) return <> </>;
 
